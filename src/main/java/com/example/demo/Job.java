@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Jon {
+public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -16,6 +16,14 @@ public class Jon {
     @NotNull
     @Size(min=4)
     private String title;
+
+    @NotNull
+    @Size(min=3)
+    private String employer;
+
+    @NotNull
+    @Size(min=10)
+    private String description;
 
     public long getId() {
         return id;
@@ -49,11 +57,4 @@ public class Jon {
         this.description = description;
     }
 
-    @NotNull
-    @Size(min=3)
-    private String employer;
-
-    @NotNull
-    @Size(min=10)
-    private String description;
 }
